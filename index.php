@@ -5,46 +5,103 @@
 </head>
 <body>
 <?php
-/*
-1) Create a new class call it Student.  The Student class should have three properties, studentNum, firstName and lastName, and a single method, getFullName. The getFullName method should return the student's full name. 
-a) The following code shows the class being used to create a Student object. Uncomment this code to check your class works.
-b) Add some additional code below to create a second student object. 
-*/
+class StudentPrinter{
+    static function printStudents($students)
+    {
+        foreach($students as $student){
+           echo "<p>".$student->getFullName()."</p>";
+        }
+    }
+    static function printStudentsAsList($students)
+    {
+        echo "<ul>";
+        foreach($students as $student){
+           echo "<li>".$student->getFullName()."</li>";
+        }
+        echo "</ul>";
+    }
+}
+
+class Student{
+	private $studentNum;
+	private $firstName;
+	private $lastName;
+	function __construct($studentNum,$firstName,$lastName)
+	{
+		$this->setStudentNum($studentNum);
+	 	$this->setFirstName($firstName);
+	 	$this->setLastName($lastName);
+	}
+	public function setStudentNum($studentNum)
+	{
+		if($studentNum==="")  {
+            throw  new  InvalidArgumentException ( "Student number can't be empty" ) ;
+        }
+        if($studentNum[0]!=="u")  {
+            throw  new  InvalidArgumentException ( "Student number must start with a 'u'" ) ;
+        } 
+        if(strlen($studentNum)!==8)  {
+            throw  new  InvalidArgumentException ( "Student number must be 8 characters in length" ) ;
+        } 
+		$this->studentNum=$studentNum;
+	}
+	public function setLastName($lastName)
+	{
+		if($lastName==="")  {
+            throw  new  InvalidArgumentException ( "Last name can't be empty" ) ;
+        } 
+		$this->lastName=$lastName;
+	}
+	public function setFirstName($firstName)
+	{
+		if($firstName==="")  {
+            throw  new  InvalidArgumentException ( "First name can't be empty" ) ;
+        } 
+		$this->firstName=$firstName;
+	}
+	public function getFullName()
+	{
+		return $this->firstName." ".$this->lastName;
+	}
+}
+
+// $exampleStudent = new Student();
+// $exampleStudent->studentNum="u0123456";
+// $exampleStudent->firstName="John";
+// $exampleStudent->lastName="Smith";
+// var_dump($exampleStudent);
+// echo $exampleStudent->getFullName();
 
 /*
-use OOPPractical\Student;
-
-require_once("student.php");
-$exampleStudent = new Student();
-var_dump($exampleStudent);
-$exampleStudent->studentNum="u0123456";
-$exampleStudent->firstName="John";
-$exampleStudent->lastName="Smith";
-var_dump($exampleStudent);
-echo "<p>".$exampleStudent->getFullName()."</p>";
+1) The code above declares a simple Student class. It then creates a Student object and dumps the details of the object. 
+a) Open this in a browser to check it works
+b) Add an additional line of code that will call the getFullname method. 
+c) Add some additional to create a second student object. Use var_dump() to check this also works
 */
+
 
 /*
-2) Modify your Student class to use a constructor function. The code below provides an example of the constructor function being called. Uncomment this to check it works (the code from Q1 above will now give you errors because it doesn't use the constructor - comment it out again). Again, once this works add some additional code to create a seconds student object
+2) Modify your Student class to use a constructor function. The code below provides an example of the constructor function being called. Uncomment this to check it works (the code from Q1 above will now give you errors because it doesn't use the constructor - comment it out ). Again, once this works add some additional code to create a seconds student object
 */
 
-/*
-$exampleStudent = new Student("u0123456", "John", "Smith");
-echo "<p>".$exampleStudent->getFullName()."</p>";
-*/
+
+// $exampleStudent = new Student("u0123456", "John", "Smith");
+// echo "<p>".$exampleStudent->getFullName()."</p>";
+
 
 
 /*
 3) The following code creates several instances of Student and stores them in an array. Uncomment the code and add a foreach loop that will output each student's name in turn. 
 */
 
-/*
-$students=[];
-$students[]= new Student("u0123456", "John", "Smith");
-$students[]= new Student("u0123456", "Ruhksar", "Mirza");
-$students[]= new Student("u0123456", "Ania", "Kowalski");
-*/
 
+// $students=[];
+// $students[]= new Student("u0123456", "John", "Smith");
+// $students[]= new Student("u0123456", "Ruhksar", "Mirza");
+// $students[]= new Student("u0123456", "Ania", "Kowalski");
+
+// StudentPrinter::printStudents($students);
+// StudentPrinter::printStudentsAsList($students);
 
 /*
 4) Open up the file StudentPrinter. It has a single method print(). 
@@ -57,6 +114,15 @@ b) Add an additional method to the StudentPrinter class, name it printStudentsAs
 a) Add setter methods so that values for these properties can be set. If you can get this to work, add some checks to the setter methods to make sure suitable values have been used. To start with, keep it simple, just check for empty strings.  
 b) Try adding additional checks for the student number e.g. it must start with a 'u' and be exactly eight characters in length. 
 */
+
+
+//testing getters and setters
+
+// $student = new Student("u0123456", "John", "Smith");
+// $student = new Student("0123456", "John", "Smith");
+// $student = new Student("u012345", "John", "Smith");
+// $student = new Student("u0123456", "", "Smith");
+// $student = new Student("u0123456", "John", "");
 
 ?>
 </body>
