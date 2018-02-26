@@ -100,12 +100,9 @@ c) Add some additional to create a second student object. Use var_dump() to chec
 // $students[]= new Student("u0123456", "Ruhksar", "Mirza");
 // $students[]= new Student("u0123456", "Ania", "Kowalski");
 
-// StudentPrinter::printStudents($students);
-// StudentPrinter::printStudentsAsList($students);
-
 /*
-4) Open up the file StudentPrinter. It has a single method print(). 
-a) Write some code in this file (index.php) that will create an instance of StudentPrinter, and call the printStudents() method so that the names of all students are displayed.
+4) Uncomment the class StudentPrinter. It has a single method printStudents(). 
+a) Write some code that will call the printStudents() method so that the names of all students are displayed (note printStudents is a static method). Once this works you can delete the foreach loop you added in (Q3).
 b) Add an additional method to the StudentPrinter class, name it printStudentsAsList(). This method should output the array of students as an HTML list. Check this works by calling the printStudentsAsList() method.
 */
 
@@ -118,11 +115,11 @@ b) Try adding additional checks for the student number e.g. it must start with a
 
 //testing getters and setters
 
-// $student = new Student("u0123456", "John", "Smith");
-// $student = new Student("0123456", "John", "Smith");
-// $student = new Student("u012345", "John", "Smith");
-// $student = new Student("u0123456", "", "Smith");
-// $student = new Student("u0123456", "John", "");
+// $student = new Student("u0123456", "John", "Smith"); //should work ok
+// $student = new Student("0123456", "John", "Smith"); //should give an error (no u in the student number)
+// $student = new Student("u012345", "John", "Smith"); //should give an error (student number not longe enough)
+// $student = new Student("u0123456", "", "Smith"); //should given an error (empty first name)
+// $student = new Student("u0123456", "John", ""); //should given an error (empty kast name)
 
 ?>
 </body>
