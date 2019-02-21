@@ -76,9 +76,9 @@ b) Try adding additional checks for the student number e.g. it must start with a
 
 // $student = new Student("u0123456", "John", "Smith"); //should work ok
 // $student = new Student("0123456", "John", "Smith"); //should give an error (no u in the student number)
-// $student = new Student("u012345", "John", "Smith"); //should give an error (student number not longe enough)
+// $student = new Student("u012345", "John", "Smith"); //should give an error (student number not long enough)
 // $student = new Student("u0123456", "", "Smith"); //should given an error (empty first name)
-// $student = new Student("u0123456", "John", ""); //should given an error (empty kast name)
+// $student = new Student("u0123456", "John", ""); //should given an error (empty last name)
 
 ?>
 </body>
