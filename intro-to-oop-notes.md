@@ -91,12 +91,21 @@ $dogObject = new Dog("Buster","Poodle"); //calls the constructor method
 echo "<p>{$dogObject->talk()}</p>"; //Buster says woof
 ```
 * A constructor method is a special method that will be called automatically when an object is created.
-* Using a constructor method is much easier that sepearately assigning values to each property. 
+* Using a constructor method is much easier that seperately assigning values to each property. 
 * **__construct** (it’s a double underscore) is a PHP keyword i.e. constructor functions always have to be called **__construct**.
 
 ## Arrays of objects
 Often we will store a collection of objects as an array e.g.
 ```php
+class Dog{
+    public $name;
+    public $breed;
+    public function talk()
+    {
+        return $this->name." says woof.";
+    }
+}
+
 $dogs=[]; //create an empty array
 $dogs[]= new Dog("Buster","Poodle");
 $dogs[]= new Dog("Rex","Labrador");
@@ -114,10 +123,10 @@ foreach($dogs as $dog)
 When we declare the properties of a class they can either be public, private or protected.
 * **Public**. The default, any code can access the property.
 * **Private**. Only code inside the class definition can access the property.
-* **Protected**. Only code inside the class or child classes can access the property. This will make sense when we look at inheritance (in a later weeks).
+* **Protected**. Only code inside the class or child classes can access the property. This will make sense when we look at inheritance (in a later practical).
 
 ### What's wrong with public properties
-It is generally considered good practice to make properties private. Here's an example of what can go wrong if properties are declared public.
+It is generally considered good practice to make properties private. The following class is used to create Module objects e.g. if we were building a student record system for the university. Here's an example of what can go wrong if properties are declared public.
 ```php
 class Module{
     public $code;
@@ -129,7 +138,7 @@ class Module{
     }
 }
 
-$moduleObject = new Module("CIT2318",40);
+$moduleObject = new Module("CIT2202",20);
 $moduleObject->credit="qwerty"; //I can change the module credit rating to be nonsense!
 
 ```
@@ -147,7 +156,7 @@ class Module{
     }
 }
 
-$moduleObject = new Module("CIT2318",40);
+$moduleObject = new Module("CIT2202",20);
 $moduleObject->credit="qwerty"; //Fatal error: Cannot access private property Module::$credit
 
 
@@ -161,12 +170,12 @@ class Module{
     function __construct($code, $credit)
     {
         $this->code=$code;
-        $this->setCredit($credit);
+        $this->setCredit($credit); //call setCredit to set the value of the credit property
     }
     public function setCredit($credit)
     {
         if(!is_int($credit) || $credit<10 || $credit> 60){
-        throw  new  InvalidArgumentException ( 'Credit rating must be between 10 and 60' ) ;
+               throw  new  InvalidArgumentException ( 'Credit rating must be between 10 and 60' ) ;
         }
         $this->credit = $credit;
     }
@@ -183,19 +192,19 @@ echo "<p>{$moduleObject->getCredit()}</p>"; //20
 ```
 
 The *$credit* property is private. 
-* In order to assign a value to the $credit property we have to call the public method *setCredit()*. 
+* In order to assign a value to the $credit property we have to call the public method *setCredit()*. At the university modules have to have a credit rating of between 10 and 60 credits. So this code will throw an error if we try to set the credit rating to be an invalid value. 
 * In order to retrieve the credit value we have to call the public method *getCredit()*.
 
 
 ### Encapsulation
 * Making properties private is an example of an important OOP principle called encapsulation (information hiding)
-* If the credit property is private, the only way the user can change the credit rating for the module is by calling *setCredit*. There is a single point in the code where credit can be changed.
+* If the credit property is private, the only way the user can change the credit rating for the module is by calling *setCredit*. There is a **single** point in the code where credit can be changed.
 * There are other reasons for using getter/setter methods e.g. a getter may calculate a value, or we may have to perform an additional task whenever the value of a property is changed.
 
 >Note: For convenience in these notes and the ones that follow, in order to keep the examples as simple as possible I usually don't bother to make properties private. However, encapsulation is something to consider when building your own OOP PHP applications. 
 
 ### Magic methods
-It is more convenient to write *$module->credit=20* instead of *$module->setCredit(20)*. PHP provides  **__set** and **__get** 'magic methods'. See http://culttt.com/2014/04/16/php-magic-methods/ for more info.
+It can be more convenient to write *$module->credit=20* instead of *$module->setCredit(20)*. PHP provides  **__set** and **__get** 'magic methods'. See http://culttt.com/2014/04/16/php-magic-methods/ for more info.
 
 ## Static properties and methods
 Some properties and methods belong to the class and not individual instances. We call these static properties/methods. In the following example *$population* and *getPopulation* are static.
@@ -265,4 +274,4 @@ echo "<p>".Calculator::divide($num1,$num2)."<p>"; //2
 ```
 Bear in mind that using static methods and properties isn't always a good idea
 * Can create 'dependencies', making code difficult to maintain.
-* Often suited to functions that don't use any external variables, functions that are self-contained.
+* Often suited to functions that don't use any external variables, functions (like those in this example) that are self-contained.
