@@ -40,7 +40,9 @@ c) Add some additional to create a second student object. Use var_dump() to chec
 
 
 /*
-2) Modify your Student class to use a constructor function. The code below provides an example of the constructor function being called. Uncomment this to check it works (the code from Q1 above will now give you errors because it doesn't use the constructor - comment it out ). Again, once this works add some additional code to create a seconds student object
+2) Modify your Student class to use a constructor function. The code below provides an example of the constructor function being called. 
+Uncomment this to check it works (the code from Q1 above will now give you errors because it doesn't use the constructor - comment it out ). 
+Again, once this works add some additional code to create a second student object
 */
 
 
@@ -50,7 +52,8 @@ c) Add some additional to create a second student object. Use var_dump() to chec
 
 
 /*
-3) The following code creates several instances of Student and stores them in an array. Uncomment the code and add a foreach loop that will output each student's name in turn. 
+3) The following code creates several instances of Student and stores them in an array. 
+Uncomment the code and add a foreach loop that will output each student's name in turn. 
 */
 
 
@@ -60,15 +63,20 @@ c) Add some additional to create a second student object. Use var_dump() to chec
 // $students[]= new Student("u0123456", "Ania", "Kowalski");
 
 /*
-4) Uncomment the class StudentPrinter. It has a single method printStudents(). 
-a) Write some code that will call the printStudents() method so that the names of all students are displayed (note printStudents is a static method). Once this works you can delete the foreach loop you added in (Q3).
-b) Add an additional method to the StudentPrinter class, name it printStudentsAsList(). This method should output the array of students as an HTML list. Check this works by calling the printStudentsAsList() method.
+4) The class StudentPrinter has a single method printStudents(). 
+a) Write some code that will call the printStudents() method so that the names of all students are displayed (note printStudents is a static method).
+Once this works you can delete the foreach loop you added in (Q3).
+b) Add an additional method to the StudentPrinter class, name it printStudentsAsList(). 
+This method should output the array of students as an HTML list. Check this works by calling the printStudentsAsList() method.
 */
 
 /*
-5) Have a look at the slides for info about access modifiers. Make the properties in the Student class private. 
-a) Add setter methods so that values for these properties can be set. If you can get this to work, add some checks to the setter methods to make sure suitable values have been used. To start with, keep it simple, just check for empty strings.  
+5) Have a look at the notes for info about access modifiers. Make the properties in the Student class private. 
+a) Add setter methods so that values for these properties can be set. 
+If you can get this to work, add some checks to the setter methods to make sure suitable values have been used. 
+To start with, keep it simple, just check for empty strings.  
 b) Try adding additional checks for the student number e.g. it must start with a 'u' and be exactly eight characters in length. 
+The code below can be used to check your getter and setter methods.
 */
 
 
