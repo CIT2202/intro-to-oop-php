@@ -63,11 +63,17 @@ Uncomment the code and add a foreach loop that will output each student's name i
 // $students[]= new Student("u0123456", "Ania", "Kowalski");
 
 /*
+<<<<<<< HEAD
 4) The class StudentPrinter has a single method printStudents(). 
 a) Write some code that will call the printStudents() method so that the names of all students are displayed (note printStudents is a static method).
 Once this works you can delete the foreach loop you added in (Q3).
 b) Add an additional method to the StudentPrinter class, name it printStudentsAsList(). 
 This method should output the array of students as an HTML list. Check this works by calling the printStudentsAsList() method.
+=======
+4) Uncomment the class StudentPrinter. It has a single method printStudents(). 
+a) Write some code that will call the printStudents() method so that the names of all students are displayed (note printStudents is a static method). Once this works you can delete the foreach loop you added in (Q3).
+b) Add an additional method to the StudentPrinter class, name it printStudentsAsList(). This method should output the array of students as an HTML list. Check this works by calling the printStudentsAsList() method.
+>>>>>>> 104f0e2af7fbfc5d4519a49bf4080c0b5df221e1
 */
 
 /*
@@ -84,9 +90,15 @@ The code below can be used to check your getter and setter methods.
 
 // $student = new Student("u0123456", "John", "Smith"); //should work ok
 // $student = new Student("0123456", "John", "Smith"); //should give an error (no u in the student number)
+<<<<<<< HEAD
 // $student = new Student("u012345", "John", "Smith"); //should give an error (student number not long enough)
 // $student = new Student("u0123456", "", "Smith"); //should given an error (empty first name)
 // $student = new Student("u0123456", "John", ""); //should given an error (empty last name)
+=======
+// $student = new Student("u012345", "John", "Smith"); //should give an error (student number not longe enough)
+// $student = new Student("u0123456", "", "Smith"); //should given an error (empty first name)
+// $student = new Student("u0123456", "John", ""); //should given an error (empty kast name)
+>>>>>>> 104f0e2af7fbfc5d4519a49bf4080c0b5df221e1
 
 ?>
 </body>
