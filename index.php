@@ -9,14 +9,14 @@ class StudentPrinter{
     static function printStudents($students)
     {
         foreach($students as $student){
-           echo "<p>".$student->getFullName()."</p>";
+           echo "<p>{$student->getFullName()}</p>";
         }
     }
     static function printStudentsAsList($students)
     {
         echo "<ul>";
         foreach($students as $student){
-           echo "<li>".$student->getFullName()."</li>";
+           echo "<li>{$student->getFullName()}</li>";
         }
         echo "</ul>";
     }
@@ -61,7 +61,7 @@ class Student{
 	}
 	public function getFullName()
 	{
-		return $this->firstName." ".$this->lastName;
+		return "{$this->firstName}{$this->lastName}";
 	}
 }
 
