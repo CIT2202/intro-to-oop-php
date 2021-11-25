@@ -14,7 +14,7 @@ class Dog{
     public $breed;
     public function talk()
     {
-        return $this->name." says woof.";
+        return "{$this->name} says woof.";
     }
 }
 
