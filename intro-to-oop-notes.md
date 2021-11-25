@@ -274,4 +274,4 @@ echo "<p>".Calculator::divide($num1,$num2)."<p>"; //2
 ```
 Bear in mind that using static methods and properties isn't always a good idea
 * Can create 'dependencies', making code difficult to maintain.
-* Often suited to functions that don't use any external variables, functions (like those in this example) that are self-contained.
+* Often suited to functions that don't use any external variables, and only feature function (like those in this example) that are self-contained.
