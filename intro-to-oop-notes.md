@@ -120,7 +120,7 @@ foreach($dogs as $dog)
 ```
 
 ## Abstraction
-You should be familiar with the idea of abstraction from when we have looked at functions. OOP allows takes abstraction to the next level. We can accomplish tasks by calling object methods, and not have to concern ourselves with the underlying details of what the code is doing. We have already been doing this by using objects that are built into PHP. Have a look at the following code we have used many times previously:-
+You should be familiar with the idea of abstraction from the work we did with functions. OOP allows takes abstraction to the next level. We can accomplish tasks by calling object methods, and not have to concern ourselves with the underlying details of what the code is doing. We have already been doing this by using objects that are built into PHP. Have a look at the following code we have used many times previously:-
 
 ```php
 $conn = new PDO('mysql:host=localhost;dbname=cit2202', 'cit2202', 'letmein');
