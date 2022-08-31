@@ -44,7 +44,7 @@ We can call methods using the object operator (-> symbol).
 ```php
 echo "<p>{$dogObject->talk()}</p>"; //Buster says woof
 ```
-To access an object's properties from within a method we use the '''$this''' keyword. '''$this''' simply means the current object. Have a look at the '''talk()''' method above.
+To access an object's properties from within a method we use the ```$this``` keyword. ```$this``` simply means the current object. Have a look at the ```talk()``` method above.
 
 We can create multiple instances (objects) from a single class.
 
