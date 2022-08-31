@@ -2,7 +2,7 @@
 
 You should be familiar with the basic idea of objects from programming in Year 1. 
 
-OOP involves structuring code using objects. An object is simply a group of related functions and variables. Before we can create our own objects we first have to create a class
+OOP involves structuring code using objects. An object is simply a group of related functions and variables. Before we can create our own objects first we have to define a class
 
 ## PHP classes
 
