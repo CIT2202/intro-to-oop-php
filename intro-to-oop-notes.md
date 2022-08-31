@@ -119,6 +119,14 @@ foreach($dogs as $dog)
 
 ```
 
+## Abstraction
+You should be familiar with the idea of abstraction from when we have looked at functions. OOP allows takes abstraction to the next level. An object can have both properties (variables) and functions (methods). We can accomplish tasks by calling object methods, and not have to concern ourselves with the underlying details of what the code is doing. We have already been doing this. Have a look at the following code we have used many times previously:-
+
+```php
+$conn = new PDO('mysql:host=localhost;dbname=cit2202', 'cit2202', 'letmein');
+```
+This code creates an instance of a PDO connection object by calling the constructor function of the PDO class. We have happily used this code to connect to a database without having to worry about the details of how the connection takes place. Using OOP, the complexity of connecting to a database has been abstracted away.
+
 ## Access control modifiers
 When we declare the properties of a class they can either be public, private or protected.
 * **Public**. The default, any code can access the property.
