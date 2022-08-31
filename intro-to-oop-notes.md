@@ -31,7 +31,7 @@ class Dog{
 The class is just a set of plans for creating objects, by itself it doesn’t 'do' anything. We use the class to create actual objects. To create an object we use the **new** keyword followed by the name of the class. Here's an example: 
 
 ```php
-$dogObject= new Dog(); //creates a new Dog object and assigns it to the variable $dogObject
+$dogObject = new Dog(); //creates a new Dog object and assigns it to the variable $dogObject
 ```
 We can assign data to properties using the object operator (-> symbol).
 
