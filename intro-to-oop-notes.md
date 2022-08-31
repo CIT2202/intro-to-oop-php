@@ -127,12 +127,12 @@ $conn = new PDO('mysql:host=localhost;dbname=cit2202', 'cit2202', 'letmein');
 ```
 This code creates an instance of a PDO connection object by calling the constructor function of the PDO class. We have happily used this code to connect to a database without having to worry about the details of how the connection takes place. We have then gone on to call methods on this object e.g.
 
-```
+```php
 $query = "SELECT * FROM countries";
 $resultset = $conn->query($query); // calls the query method of the $conn object
 ```
 
-Using OOP, the complexity of connecting to a database and executing a query has been abstracted away.
+Using OOP, the complexity of connecting to a database and executing a query has been abstracted away. 
 
 ## Access control modifiers
 When we declare the properties of a class they can either be public, private or protected.
